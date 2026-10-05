@@ -5,28 +5,33 @@
 import java.util.Scanner;
 
 public class Homework7 {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String line = input.nextLine();
         int count = 0;
         int lineCount = 0;
+        String longest = "";
         while (line.length() > 0) {
             count = checkPrintPal(oneWord(line), count);
             line = input.nextLine();
             lineCount++;
         }
+        String plural = pluralize("palindrome", count);
+        System.out.println(count + plural);
     }
-    public static String oneWord (String str) {
+
+    public static String oneWord(String str) {
         String ans = "";
         for (int i = 0; i < str.length(); i++) {
             char result = str.charAt(i);
-            if ((result >= '0' && result <= '9') || ((result >= 'a'  && result >= 'z') || (result >= 'A' && result >= 'Z'))) {
+            if ((result >= '0' && result <= '9')
+                    || ((result >= 'a' && result >= 'z') || (result >= 'A' && result >= 'Z'))) {
                 ans = ans + result;
             }
         }
         return ans;
     }
-    
+
     public static int checkPrintPal (String str, int count) {
         boolean ans = true;
         int len = str.length();
@@ -43,8 +48,16 @@ public class Homework7 {
             System.out.println("YES: " + str);
             return count++;
         } else {
-            System.out.println("NO: " + str);
+            System.out.println(" NO: " + str);
             return count;
+        }
+    }
+
+    public static String pluralize (String str, int num) {
+        if (num > 1) {
+            return str + "s";
+        } else {
+            return str;
         }
     }
 }
