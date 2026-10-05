@@ -9,6 +9,7 @@ public class Homework7 {
         Scanner input = new Scanner(System.in);
         String line = input.nextLine();
         while (line.length() > 0) {
+            checkPrintPal(oneWord(line));
             line = input.nextLine();
         }
     }
