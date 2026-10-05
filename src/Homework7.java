@@ -12,7 +12,7 @@ public class Homework7 {
             line = input.nextLine();
         }
     }
-    public static String elimSpacePunc (String str) {
+    public static String oneWord (String str) {
         String ans = "";
         for (int i = 0; i < str.length(); i++) {
             char result = str.charAt(i);
