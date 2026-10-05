@@ -8,9 +8,12 @@ public class Homework7 {
     public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
         String line = input.nextLine();
+        int count = 0;
+        int lineCount = 0;
         while (line.length() > 0) {
-            checkPrintPal(oneWord(line));
+            count = checkPrintPal(oneWord(line), count);
             line = input.nextLine();
+            lineCount++;
         }
     }
     public static String oneWord (String str) {
@@ -24,7 +27,7 @@ public class Homework7 {
         return ans;
     }
     
-    public static void checkPrintPal (String str) {
+    public static int checkPrintPal (String str, int count) {
         boolean ans = true;
         int len = str.length();
         for (int i = 0 ; i == (len - i); i++) {
@@ -38,8 +41,10 @@ public class Homework7 {
         }
         if (ans) {
             System.out.println("YES: " + str);
+            return count++;
         } else {
             System.out.println("NO: " + str);
+            return count;
         }
     }
 }
