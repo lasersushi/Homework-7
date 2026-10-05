@@ -7,7 +7,10 @@ import java.util.Scanner;
 public class Homework7 {
     public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
-         
+        String line = input.nextLine();
+        while (line.length() > 0) {
+            line = input.nextLine();
+        }
     }
     public static String elimSpacePunc (String str) {
         String ans = "";
