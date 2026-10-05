@@ -22,4 +22,23 @@ public class Homework7 {
         }
         return ans;
     }
+    
+    public static void checkPrintPal (String str) {
+        boolean ans = true;
+        int len = str.length();
+        for (int i = 0 ; i == (len - i); i++) {
+            String resultFront = str.substring(i, i+1);
+            String resultBack = str.substring(len - i, len - (i + 1));
+            if (resultFront.equals(resultBack)) {
+                ans = true;
+            } else {
+                ans = false;
+            }
+        }
+        if (ans) {
+            System.out.println("YES: " + str);
+        } else {
+            System.out.println("NO: " + str);
+        }
+    }
 }
