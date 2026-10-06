@@ -22,7 +22,7 @@ public class Homework7 {
             lineCount++;
         }
         String plural = pluralize("palindrome", count);
-        System.out.println(count + plural);
+        System.out.println(count + " " + plural);
         System.out.println("Longest: " + longest);
     }
 
