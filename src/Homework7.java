@@ -39,7 +39,7 @@ public class Homework7 {
         for (int i = 0; i < str.length(); i++) {
             char result = str.charAt(i);
             if ((result >= '0' && result <= '9')
-                    || ((result >= 'a' && result >= 'z') || (result >= 'A' && result >= 'Z'))) {
+                    || ((result >= 'a' && result <= 'z') || (result >= 'A' && result <= 'Z'))) {
                 ans = ans + result;
             }
         }
@@ -49,9 +49,9 @@ public class Homework7 {
     public static boolean checkPal(String str) {
         boolean ans = true;
         int len = str.length();
-        for (int i = 0; i != (len - i); i++) {
+        for (int i = 0; i <= (len - (i + 1)); i++) {
             String resultFront = str.substring(i, i + 1);
-            String resultBack = str.substring(len - i, len - (i - 1));
+            String resultBack = str.substring(len - (i + 1), len - i);
             if (resultFront.equalsIgnoreCase(resultBack) && ans != false) {
                 ans = true;
             } else {
