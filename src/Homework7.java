@@ -11,9 +11,16 @@ public class Homework7 {
         int count = 0;
         int lineCount = 0;
         String longest = "";
+        String ans = "";
         while (line.length() > 0) {
-            String oneword = oneWord(line);
-            count = checkPrintPal(oneWord(line), count);
+            String oneWord = oneWord(line);
+            boolean isPal = checkPal(oneWord);
+            if (isPal) {
+                ans = "YES: " + line + "\n";
+                count++;
+            } else {
+                ans = " NO: " + line + "\n";
+            }
             boolean longestCheck = isLongest(line, longest);
             if (longestCheck) {
                 longest = line;
@@ -21,6 +28,7 @@ public class Homework7 {
             line = input.nextLine();
             lineCount++;
         }
+        System.out.println(ans);
         String plural = pluralize("palindrome", count);
         System.out.println(count + " " + plural);
         System.out.println("Longest: " + longest);
@@ -38,7 +46,7 @@ public class Homework7 {
         return ans;
     }
 
-    public static int checkPrintPal(String str, int count) {
+    public static boolean checkPal(String str) {
         boolean ans = true;
         int len = str.length();
         for (int i = 0; i == (len - i); i++) {
@@ -50,13 +58,7 @@ public class Homework7 {
                 ans = false;
             }
         }
-        if (ans) {
-            System.out.println("YES: " + str);
-            return count++;
-        } else {
-            System.out.println(" NO: " + str);
-            return count;
-        }
+        return ans;
     }
 
     public static String pluralize(String str, int num) {
