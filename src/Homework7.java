@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Homework7 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in); // Uses standard input to take in the given input
         String line = input.nextLine();
         int count = 0;
         int lineCount = 0;
@@ -16,7 +16,7 @@ public class Homework7 {
             String oneWord = oneWord(line);
             boolean isPal = checkPal(oneWord);
             if (isPal) {
-                ans = ans + "YES: " + line + "\n";
+                ans = ans + "YES: " + line + "\n";  // This conditional block adds the given palindrome to the answer, which is printed at the end. It also adds a new line
                 count++;
             } else {
                 ans = ans + " NO: " + line + "\n";
@@ -34,7 +34,8 @@ public class Homework7 {
         System.out.println("Longest: " + longest);
     }
 
-    public static String oneWord(String str) {
+    public static String oneWord(String str) { // This method reformats the given string so that it can be compared as a
+                                               // palindrome, removing punctation and spaces
         String ans = "";
         for (int i = 0; i < str.length(); i++) {
             char result = str.charAt(i);
@@ -61,7 +62,8 @@ public class Homework7 {
         return ans;
     }
 
-    public static String pluralize(String str, int num) {
+    public static String pluralize(String str, int num) { // This method adds the s to the end of words if there is
+                                                          // multiole of a quantity that word is describing
         if (num == 1) {
             return str;
         } else {
@@ -69,12 +71,15 @@ public class Homework7 {
         }
     }
 
-    public static boolean isLongest(String str, String longest, boolean isPal) {
+    public static boolean isLongest(String str, String longest, boolean isPal) { // This method checks for the longest
+                                                                                 // word including spaces and
+                                                                                 // explenation, not sure what I was
+                                                                                 // supposed to to there
         int longLen = longest.length();
         if (longLen < str.length() && isPal) {
             return true;
         } else {
-            return false;
+            return false; // I have this set so that it returns false even when there is a tie
         }
     }
 }
