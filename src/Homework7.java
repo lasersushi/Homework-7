@@ -14,11 +14,11 @@ public class Homework7 {
         while (line.length() > 0) {
             String oneword = oneWord(line);
             count = checkPrintPal(oneWord(line), count);
-            line = input.nextLine();
             boolean longestCheck = isLongest(line, longest);
             if (longestCheck) {
                 longest = line;
             }
+            line = input.nextLine();
             lineCount++;
         }
         String plural = pluralize("palindrome", count);
