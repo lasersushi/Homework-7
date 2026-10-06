@@ -14,6 +14,10 @@ public class Homework7 {
         while (line.length() > 0) {
             count = checkPrintPal(oneWord(line), count);
             line = input.nextLine();
+            boolean longestCheck = isLongest(line, longest);
+            if (longestCheck) {
+                longest = line;
+            }
             lineCount++;
         }
         String plural = pluralize("palindrome", count);
@@ -32,11 +36,11 @@ public class Homework7 {
         return ans;
     }
 
-    public static int checkPrintPal (String str, int count) {
+    public static int checkPrintPal(String str, int count) {
         boolean ans = true;
         int len = str.length();
-        for (int i = 0 ; i == (len - i); i++) {
-            String resultFront = str.substring(i, i+1);
+        for (int i = 0; i == (len - i); i++) {
+            String resultFront = str.substring(i, i + 1);
             String resultBack = str.substring(len - i, len - (i + 1));
             if (resultFront.equals(resultBack)) {
                 ans = true;
@@ -53,11 +57,21 @@ public class Homework7 {
         }
     }
 
-    public static String pluralize (String str, int num) {
+    public static String pluralize(String str, int num) {
         if (num > 1) {
             return str + "s";
         } else {
             return str;
+        }
+    }
+
+    public static boolean isLongest(String str, String longest) {
+        // TODO: Fix method to deal with ties
+        int longLen = longest.length();
+        if (longLen < str.length()) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
