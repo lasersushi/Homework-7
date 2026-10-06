@@ -47,7 +47,7 @@ public class Homework7 {
         return ans;
     }
 
-    public static boolean checkPal(String str) {
+    public static boolean checkPal(String str) { //Checks if the given input is a palandrome
         boolean ans = true;
         int len = str.length();
         for (int i = 0; i <= (len - (i + 1)); i++) {
