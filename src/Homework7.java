@@ -22,6 +22,7 @@ public class Homework7 {
         }
         String plural = pluralize("palindrome", count);
         System.out.println(count + plural);
+        System.out.println("Longest: " + longest);
     }
 
     public static String oneWord(String str) {
