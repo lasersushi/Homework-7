@@ -16,7 +16,7 @@ public class Homework7 {
             String oneWord = oneWord(line);
             boolean isPal = checkPal(oneWord);
             if (isPal) {
-                ans = "YES: " + line + "\n";
+                ans = ans + "YES: " + line + "\n";
                 count++;
             } else {
                 ans = " NO: " + line + "\n";
