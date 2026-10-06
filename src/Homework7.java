@@ -12,6 +12,7 @@ public class Homework7 {
         int lineCount = 0;
         String longest = "";
         while (line.length() > 0) {
+            String oneword = oneWord(line);
             count = checkPrintPal(oneWord(line), count);
             line = input.nextLine();
             boolean longestCheck = isLongest(line, longest);
