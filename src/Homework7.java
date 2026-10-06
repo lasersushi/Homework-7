@@ -49,10 +49,10 @@ public class Homework7 {
     public static boolean checkPal(String str) {
         boolean ans = true;
         int len = str.length();
-        for (int i = 0; i == (len - i); i++) {
+        for (int i = 0; i != (len - i); i++) {
             String resultFront = str.substring(i, i + 1);
-            String resultBack = str.substring(len - i, len - (i + 1));
-            if (resultFront.equalsIgnoreCase(resultBack)) {
+            String resultBack = str.substring(len - i, len - (i - 1));
+            if (resultFront.equalsIgnoreCase(resultBack) && ans != false) {
                 ans = true;
             } else {
                 ans = false;
