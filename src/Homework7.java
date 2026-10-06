@@ -19,7 +19,7 @@ public class Homework7 {
                 ans = ans + "YES: " + line + "\n";
                 count++;
             } else {
-                ans = " NO: " + line + "\n";
+                ans = ans + " NO: " + line + "\n";
             }
             boolean longestCheck = isLongest(line, longest);
             if (longestCheck) {
