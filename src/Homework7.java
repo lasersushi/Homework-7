@@ -21,7 +21,7 @@ public class Homework7 {
             } else {
                 ans = ans + " NO: " + line + "\n";
             }
-            boolean longestCheck = isLongest(line, longest);
+            boolean longestCheck = isLongest(line, longest, isPal);
             if (longestCheck) {
                 longest = line;
             }
@@ -69,10 +69,9 @@ public class Homework7 {
         }
     }
 
-    public static boolean isLongest(String str, String longest) {
-        // TODO: Fix method to deal with ties
+    public static boolean isLongest(String str, String longest, boolean isPal) {
         int longLen = longest.length();
-        if (longLen < str.length()) {
+        if (longLen < str.length() && isPal) {
             return true;
         } else {
             return false;
