@@ -60,10 +60,10 @@ public class Homework7 {
     }
 
     public static String pluralize(String str, int num) {
-        if (num > 1) {
-            return str + "s";
-        } else {
+        if (num == 1) {
             return str;
+        } else {
+            return str + "s";
         }
     }
 
